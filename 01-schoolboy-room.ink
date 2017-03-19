@@ -31,7 +31,7 @@ I look at the mirror. Well, this dude is pretty good looking, at least I've got 
     ~ explore_counts += 1
     ** {first_explore} -> explore_room.mum_calls
     ++ { not first_explore }[Look around to see if there's anything interesting.] Wary of time, I rummage through his clothes. -> explore_room.inside_wardrobe
-+ {explore_counts < 2 } [Go towards the table] I walk towards the table. -> explore_room.table
++ {explore_counts <= 2 } [Go towards the table] I walk towards the table. -> explore_room.table
 
 = inside_wardrobe
 { not seen_cheatsheet:
