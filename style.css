@@ -1,6 +1,7 @@
+@import url('https://fonts.googleapis.com/css?family=Heebo');
 body {
-    font-family: sans-serif;
-    font-weight: lighter;
+    font-family: Heebo, sans-serif;
+    font-weight: normal;
 }
 
 h1 {
@@ -16,7 +17,8 @@ h1 {
 }
 
 p, a {
-    color: gray;
+    /*color: gray;*/
+    color: #404040;
     line-height: 1.7em;
     font-size: 13pt;
 }
