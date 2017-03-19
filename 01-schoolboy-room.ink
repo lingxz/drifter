@@ -118,7 +118,7 @@ There's nothing new here.
 === before_going_outside ===
 I go outside. The mother busies herself around me. 
 
-{before_going_outside == 1 :
+{before_going_outside == 1 and not mum_suspicious:
     "Oh dear, you look feverish," she suddenly exclaims. "Do you need to go to the doctor?"
 * "No, I'm fine[."]," I reply. -> go_to_school
 * ["Yes, I think I'm sick."] "Yes, I think I'm sick," I reply. Maybe the doctor would be able to tell me what is going on. -> go_to_doctor
