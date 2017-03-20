@@ -7,8 +7,11 @@ VAR seen_cheatsheet = false
 VAR has_cheatsheet = false
 VAR wearing_hat = false
 VAR hat_color = "none"
+VAR seen_doctor = false
+VAR powers_activated = false
 ~ temp explore_counts = 0
 ~ temp first_explore = true
+~ temp max_explore = 1
 
 
 === schoolboy_room ===
@@ -25,10 +28,10 @@ It looks like a normal schoolboy's room. There is a stack of books on the table,
 
 = wardrobe
 {wardrobe == 1: 
-I look at the mirror. Well, this dude is pretty good looking, at least I've got that going for me. 
+I look at the mirror. He looks puny. Oversized clothes, powerless hands. 
 }
 
-+ {explore_counts > 2 and not first_explore } I have taken too long. -> explore_room.need_to_go
++ {explore_counts > max_explore and not first_explore } I have taken too long. -> explore_room.need_to_go
 + {explore_counts <= 2 or first_explore } [Open the wardrobe.] I open the wardrobe. This guy obviously likes black. 
     ~ explore_counts += 1
     ** {first_explore} -> explore_room.mum_calls
@@ -37,7 +40,7 @@ I look at the mirror. Well, this dude is pretty good looking, at least I've got 
         +++ [Yes] -> explore_room.choose_hat
         +++ [No] Bleh, his hats are terrible. -> explore_room.wardrobe
     ++ { not first_explore }[Look around to see if there's anything interesting.] Wary of time, I rummage through his clothes. -> explore_room.inside_wardrobe
-+ {explore_counts <= 2 } [Go towards the table] I walk towards the table. -> explore_room.table
++ {explore_counts <= max_explore } [Go towards the table] I walk towards the table. -> explore_room.table
 
 = choose_hat
 A hat will probably look good on me. 
@@ -83,20 +86,20 @@ What color should I wear?
 }
 
 = table
-    + {explore_counts <= 2 or first_explore } [Look at the name tag.] I look at the name tag. 
-        ~ explore_counts += 1
-        It says {name}. 
-        ~ knows_name = true
-        ++ {first_explore} -> explore_room.mum_calls
-        ++ {not first_explore} [Go back.] -> explore_room.table
-    + {explore_counts <= 2 or first_explore } [Check out the books.] I briefly flip through the books. Something catches my eye. 
+    + {explore_counts <= max_explore or first_explore } [Check out the books.] I briefly flip through the books. Something catches my eye. 
         ~ explore_counts += 1
         ++ {first_explore} -> explore_room.mum_calls
         ++ {not first_explore}What's that? -> girlfriend_photo
         ++ {not first_explore } Never mind. 
             +++ [Go back.] -> explore_room.table
-    + {explore_counts <= 2 or first_explore } [Go to the wardrobe.] I walk towards the wardrobe. ->explore_room.wardrobe
-    + {explore_counts > 2 and not first_explore } I have taken too long. -> explore_room.need_to_go
+    + {explore_counts <= max_explore or first_explore } [Look at the name tag.] I look at the name tag. 
+        ~ explore_counts += 1
+        It says {name}. 
+        ~ knows_name = true
+        ++ {first_explore} -> explore_room.mum_calls
+        ++ {not first_explore} [Go back.] -> explore_room.table
+    + {explore_counts <= max_explore or first_explore } [Go to the wardrobe.] I walk towards the wardrobe. ->explore_room.wardrobe
+    + {explore_counts > max_explore and not first_explore } I have taken too long. -> explore_room.need_to_go
 
 = mum_calls
 "Hey, {name}, it's time for school!" A voice calls, and middle aged woman steps into the room. 
@@ -163,13 +166,15 @@ She drives me to the doctor.
 
 He looks oddly familiar. 
 
+~ seen_doctor = true
+
 "How has he been recently?" he asks.
 
 * I thought I saw something dangerous in his eyes when he spoke.  
 - 
 
 {mum_suspicious: 
-   "Oh, I don't know, Dr {doctor_name}. He was acting strange just this morning. That's why I was worried."
+   "Oh, I don't know, Dr {doctor_name}. He was acting strange just this morning. That's why I'm worried. He even forgot his name this morning."
     ** The look on his face darkens. 
         "Sure, I just need to do some checkups on him to make sure he's fine. In the meantime, would you mind waiting outside?"
         Something does not feel right.
