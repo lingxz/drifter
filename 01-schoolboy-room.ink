@@ -9,6 +9,7 @@ VAR wearing_hat = false
 VAR hat_color = "none"
 VAR seen_doctor = false
 VAR powers_activated = false
+VAR jacket_description = "black leather"
 ~ temp explore_counts = 0
 ~ temp first_explore = true
 ~ temp max_explore = 1
@@ -66,7 +67,7 @@ What color should I wear?
 
 = inside_wardrobe
 { not seen_cheatsheet:
-    + There is a piece of paper sticking out of his black leather jacket. 
+    + There is a piece of paper sticking out of his {jacket_description} jacket. 
     I carefully straighten out the paper. There are {num_questions} letters written in bold with a {writing_instrument}, over and over again: {answer1}{answer2}{answer3}{answer4}{answer5}
     ~ seen_cheatsheet = true
     ++ What does this mean? []I wonder. 

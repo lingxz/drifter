@@ -1,6 +1,7 @@
 VAR gf_faith = 2
 VAR gf_faith_threshold = 2
 VAR correct_answer = false
+VAR teacher_suspicious = false
 
 === school ===
 = start
@@ -84,39 +85,61 @@ What should I fill in as the answers?
 * {x == 1}[Answers: {answer1}, {answer2}, {answer3}, {answer4}, {answer5}]
     -> correct_answer
 * [Answers: {get_random_answer()}, {get_random_answer()}, {get_random_answer()}, {get_random_answer()}, {get_random_answer()}]
-    -> test.wrong_answer ->
+    -> test.wrong_answer
 * {x == 2}[Answers: {answer1}, {answer2}, {answer3}, {answer4}, {answer5}]
-    -> test.correct_answer ->
+    -> test.correct_answer
 * [Answers: {get_random_answer()}, {get_random_answer()}, {get_random_answer()}, {get_random_answer()}, {get_random_answer()}]
-    -> test.wrong_answer ->
+    -> test.wrong_answer
 * {x == 3}[Answers: {answer1}, {answer2}, {answer3}, {answer4}, {answer5}]
-    -> test.correct_answer ->
+    -> test.correct_answer
 * [Answers: {get_random_answer()}, {get_random_answer()}, {get_random_answer()}, {get_random_answer()}, {get_random_answer()}]
-    -> test.wrong_answer ->
+    -> test.wrong_answer
 * {x == 4}[Answers: {answer1}, {answer2}, {answer3}, {answer4}, {answer5}]
-    -> test.correct_answer ->
+    -> test.correct_answer
 * [Answers: {get_random_answer()}, {get_random_answer()}, {get_random_answer()}, {get_random_answer()}, {get_random_answer()}]
-    -> test.wrong_answer ->
+    -> test.wrong_answer
 * {x == 5}[Answers: {answer1}, {answer2}, {answer3}, {answer4}, {answer5}]
-    -> test.correct_answer ->
+    -> test.correct_answer
 
     
 = correct_answer
-You shade the ovals quickly, confident that you have the right answer. 
-->->
+I shade the ovals quickly, confident that I have the right answer. 
+The invigilator walks over when he is collecting papers, and sudenly asks, "Are you cheating?"
+* "What? No." 
+{has_cheatsheet:
+    He grabs a piece of paper from my pocket, and glares at me. 
+    "What's this?"
+    Uh oh. It's the piece of paper from {name}'s jacket. 
+    He looks at me sternly. "Come with me to my office."
+    I have no choice but to follow him to his office. -> test.office
+- else:
+    "Sorry, I thought I saw something from the corner of my eye," he apologizes, before walking away. 
+    ~ teacher_suspicious = false
+    I leave the classroom, not sure where to go next.
+    -> test_end
+}
+
+* "Oops, I'm caught." Honesty is the best policy. 
+He looks surprised that I admitted it so easily. After collecting papers, he brings me to his office. -> test.office
 
 = wrong_answer
-You shade the ovals tenatively, not sure if you made the right choice.
+I shade the ovals tenatively, not sure if I made the right choice.
 - The invigilator walks over when he is collecting papers, and suddenly asks, "Are you cheating?"
 * "What? No."
 {has_cheatsheet:
     He grabs a piece of paper from my pocket, and glares at me. 
     "What's this?"
-    That was the piece of paper
+    Uh oh. It's the piece of paper from {name}'s jacket. 
+    He looks at me sternly. "Come with me to my office."
+    I have no choice but to follow him to his office. -> test.office
+- else:
+    He looks at me for a bit, but could not find anything suspicious. After brief pause, he walked away. 
+    ~ teacher_suspicious = true
+    I leave the classroom, not sure where to go next.
+    -> test_end
 }
 * "Oops, I'm caught." Honesty is the best policy. 
 He looks surprised that I admitted it so easily. After collecting papers, he brings me to his office. -> test.office
-->->
 
 = office
 He signals I drink a cup of tea while he thinks of what to do with me.
@@ -124,13 +147,22 @@ He signals I drink a cup of tea while he thinks of what to do with me.
 * [Refuse.] I refuse to take the drink. There is something fishy going on.
 He gets angry, and he tries to force me. 
 {power_activated:
-    But I am too strong for him. The strange power from previously comes flooding back. I knock him unconscious and escape.
+    But I am too strong for him. The strange power from previously comes flooding back. I knock him unconscious and escape. -> test.test_end
 - else:
     I am powerless against him. I have no choice. 
     -> stuck_in_body_ending
 }
 
+= test_end
+As I was walking aimlessly, someone stuck a piece of paper in my pocket. I turn around, but the person is gone. 
 
+It says...
+GO TO THE LIBRARY, LOOK FOR {isbn}.
+
+* Library? Why do I need to go to the library? 
+
+- I decide to follow the note and check it out ayway. 
+-> library.entrance
 
 === fall_in_love ===
 
