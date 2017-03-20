@@ -5,6 +5,8 @@ VAR took_gf_photo = false
 VAR doctor_name = "Williams"
 VAR seen_cheatsheet = false
 VAR has_cheatsheet = false
+VAR wearing_hat = false
+VAR hat_color = "none"
 ~ temp explore_counts = 0
 ~ temp first_explore = true
 
@@ -30,13 +32,39 @@ I look at the mirror. Well, this dude is pretty good looking, at least I've got 
 + {explore_counts <= 2 or first_explore } [Open the wardrobe.] I open the wardrobe. This guy obviously likes black. 
     ~ explore_counts += 1
     ** {first_explore} -> explore_room.mum_calls
+    ++ {not first_explore} There are a few hats in the wardrobe. 
+    Should I wear a hat to school?
+        +++ [Yes] -> explore_room.choose_hat
+        +++ [No] Bleh, his hats are terrible. -> explore_room.wardrobe
     ++ { not first_explore }[Look around to see if there's anything interesting.] Wary of time, I rummage through his clothes. -> explore_room.inside_wardrobe
 + {explore_counts <= 2 } [Go towards the table] I walk towards the table. -> explore_room.table
 
+= choose_hat
+A hat will probably look good on me. 
+What color should I wear? 
++ [Green] Green? Maybe not such a good choice, but I can't be bothered.
+    ~ wearing_hat = true
+    ~ hat_color = "green"
++ [Red] Red, oh yeah!
+    ~ wearing_hat = true
+    ~ hat_color = "red"
++ [Yellow] A yellow hat it is!
+    ~ wearing_hat = true
+    ~ hat_color = "yellow"
++ [Black] {name} probably likes black, I'll pick black.
+    ~ wearing_hat = true
+    ~ hat_color = "black"
++ [Purple] Purple is my favourite color!
+    ~ wearing_hat = true
+    ~ hat_color = "purple"
++ I changed my mind. Not going to wear a hat after all.
+- -> explore_room.wardrobe
+
+
 = inside_wardrobe
 { not seen_cheatsheet:
-    + There is a piece of paper sticking out of his jacket. 
-    I carefully straighten out the paper. There are {num_questions} letters written in bold with pencil, over and over again: {answer1}{answer2}{answer3}{answer4}{answer5}
+    + There is a piece of paper sticking out of his black leather jacket. 
+    I carefully straighten out the paper. There are {num_questions} letters written in bold with a {writing_instrument}, over and over again: {answer1}{answer2}{answer3}{answer4}{answer5}
     ~ seen_cheatsheet = true
     ++ What does this mean? []I wonder. 
     The paper looks ancient, and the handwriting looks strange. 

@@ -6,7 +6,7 @@
 * [Ignore him and try to run.] 
     I try to run. But the doctor is prepared. He grabs me by the collar and throws me back onto the chair.
 	"Look at you, {original_name}. To think you were so powerful then."
-
+-
 * "Powerful?"[] What is he talking about?
 
 - But there is no time to think. 
@@ -20,3 +20,6 @@ He raises a gun.
 I don't even remember hitting the ground. 
 The end.
 -> END
+
+=== failed_mission_ending ===
+"As powerful as you are, {original_name}, we told you this mission is doomed to fail," he sighed. "You did not restore the fabric of time. You messed it up."

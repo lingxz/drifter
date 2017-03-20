@@ -11,3 +11,11 @@
     - ~ return "D"
     - ~ return "E"
 }
+
+=== function get_writing_instrument ===
+{shuffle:
+    - ~ return "blue pen"
+    - ~ return "pencil"
+    - ~ return "red pen"
+    - ~ return "black pen"
+}
