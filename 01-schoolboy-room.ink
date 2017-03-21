@@ -33,7 +33,7 @@ I look at the mirror. He looks puny. Oversized clothes, powerless hands.
 }
 
 + {explore_counts > max_explore and not first_explore } I have taken too long. -> explore_room.need_to_go
-+ {explore_counts <= 2 or first_explore } [Open the wardrobe.] I open the wardrobe. This guy obviously likes black. 
++ {explore_counts <= max_explore or first_explore } [Open the wardrobe.] I open the wardrobe. This guy obviously likes black. 
     ~ explore_counts += 1
     ** {first_explore} -> explore_room.mum_calls
     ++ {not first_explore} There are a few hats in the wardrobe. 
@@ -160,6 +160,7 @@ I go outside. The mother busies herself around me.
 
 === go_to_school ===
 Before long, I am on my way to school. 
++ [Continue]
 -> school.start
 
 === go_to_doctor ===

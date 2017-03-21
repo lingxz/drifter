@@ -39,6 +39,6 @@ VAR randombook4 = "Picture Perfect"
 ~ answer4 = get_random_answer()
 ~ answer5 = get_random_answer()
 
-~ writing_instrument = get_writing_instrument
+~ writing_instrument = get_writing_instrument()
 ~ alternative_writing_instrument = get_writing_instrument_alternative(writing_instrument)
 ~ alternative_hat_color = get_alternate_color()

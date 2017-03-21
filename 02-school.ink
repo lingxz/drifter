@@ -5,7 +5,6 @@ VAR teacher_suspicious = false
 
 === school ===
 = start
-\=\=\= CHAPTER 2 ===
 I don't know where to go. So I follow the crowd. 
 
 Suddenly, someone pats me on the back. I turn around. 
@@ -147,7 +146,8 @@ He signals I drink a cup of tea while he thinks of what to do with me.
 * [Refuse.] I refuse to take the drink. There is something fishy going on.
 He gets angry, and he tries to force me. 
 {power_activated:
-    But I am too strong for him. The strange power from previously comes flooding back. I knock him unconscious and escape. -> test.test_end
+    But I am too strong for him. The strange power from previously comes flooding back. I knock him unconscious and escape. 
+    -> test.test_end
 - else:
     I am powerless against him. I have no choice. 
     -> stuck_in_body_ending
@@ -158,6 +158,8 @@ As I was walking aimlessly, someone stuck a piece of paper in my pocket. I turn 
 
 It says...
 GO TO THE LIBRARY, LOOK FOR {isbn}.
+
+It is written with a {writing_instrument}, over and over again. 
 
 * Library? Why do I need to go to the library? 
 
@@ -209,13 +211,15 @@ Clouds. A worried face. The library. A hideous reptile. A map.
         * [I remember the photo I took from {name}'s table. Maybe that could help?] I took out the photo from my pocket. 
         "I still carry this around, {gf_name}," I speak with the most ernest voice I could find. "I still remember when we took this photo, have you already forgotten?"
         She hugs me. 
-        "I believe you. I'm sorry for ever doubting." -> fall_in_love.activate_powers
+        "I believe you. I'm sorry for ever doubting." 
+            -> fall_in_love.activate_powers
         * "Hey, he's the one making a positive claim, he should bear the burden of proof[."]," I protest. 
             She laughs, "That sounds exactly like what you would say."
             A piece of paper falls from my pocket. 
             It's the photo of her that I took from {name}'s table. 
             She picks the photo up, looks at it, and suddenly hugs me.
-            "I believe you. I'm sorry for ever doubting." -> fall_in_love.activate_powers
+            "I believe you. I'm sorry for ever doubting." 
+            -> fall_in_love.activate_powers
     -else:
         * "Hey, he's the one making a positive claim, he should bear the burden of proof[."]," I protest.
             She looks at me with a quizzical look. She does not believe me.
@@ -240,15 +244,17 @@ Clouds. A worried face. The library. A hideous reptile. A map.
 
 = activate_powers
 ~ power_activated = true
-I move forward, and I suddenly feel a rush of power. 
+I move forward. 
 
-His face turned from arrogance to fear. He took out a gun. 
+* I suddenly feel a rush of power. 
+
+- His face turned from arrogance to fear. He took out a gun. 
 
 I don't know how I did it. There was a flash of light, my hands moved in the air, tracing out a complicated symbol, and the next moment, the burly man was gone. 
 
-His clothes remained, and there was powder on the ground. 
+His clothes remain, and there is powder on the ground. 
 
-{gf_name} got up from the ground.
+- {gf_name} got up from the ground.
 
 "What happened?" she rubbed her eyes. 
 

@@ -1,7 +1,7 @@
 VAR read_books = 0
 VAR max_books = 2
 VAR met_teacher = false
-VAR watched = true
+VAR watched = false
 
 === library ===
 = entrance
@@ -15,7 +15,8 @@ The library is quiet.
         I froze. 
         What should I say?
         * "Just looking around. I think a student is allowed to be in the library[."]," I shrug. 
-            He looks unconvinced. As I turn away from him, I can feel his eyes on me. -> library.entrance
+            He looks unconvinced. As I turn away from him, I can feel his eyes on me. ~ watched = true
+                -> library.entrance
         * "Looking for something. Do you know what is {isbn}?" I show him the note. 
             His expression changes. 
             -> reveal_map_ending
@@ -43,7 +44,7 @@ There are a few books and CDs on the shelf.
     ++ [{book4}]
         Maybe I'll read this some time.
         ~ read_books += 1
-    - [Go back to the entrance] I walk back to the entrance. -> library.entrance
+    - + [Go back to the entrance] I walk back to the entrance. -> library.entrance
 + [Go back to the entrance] I walk back to the entrance. -> library.entrance
 - [Go back to the entrance] I walk back to the entrance. -> library.entrance
 
@@ -58,6 +59,7 @@ There are a few books and CDs on the shelf.
     ++ [{book5}]
         Maybe I'll read this some time.
         ~ read_books += 1
+    - + [Go back to the entrance] I walk back to the entrance. -> library.entrance
 There are a few books on the shelf. 
 + [Go back to the entrance] I walk back to the entrance. -> library.entrance
 
@@ -87,6 +89,7 @@ There are a few books scattered on the trolley.
     ++ [{randombook2}]
         ~ read_books += 1
         Maybe I'll read this some time. 
+    - + [Go back to the entrance] I walk back to the entrance. -> library.entrance
 + [Go back to the entrance] I walk back to the entrance. -> library.entrance
 - [Go back to the entrance] I walk back to the entrance. -> library.entrance
 
@@ -98,14 +101,16 @@ A map.
 A splittting headache hits me, and suddenly I remember. 
 
 {not watched:
+    * [The Memory]
     -> memory
 - else:
     The invigilator walks over, and tries to snatch the piece of paper from me. 
     {power_activated: 
-        But it is too late. 
+        * But it is too late. 
         With memory comes power. He falls over in shock, looks in my eyes, and his expression turned to fear. 
         "You remember?"
-        * Yes, I remember. 
+        ** Yes, I remember. 
+        *** [The Memory]
         -> memory 
     - else:
         I was too slow to stop him. 

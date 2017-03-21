@@ -2,8 +2,8 @@
 = start
 ~ universe = set_universe()
 {universe == "fake":
-	alternative_writing_instrument = get_writing_instrument_alternative()
-	alternative_hat_color = get_alternate_color()
+	~ alternative_writing_instrument = get_writing_instrument_alternative(writing_instrument)
+	~ alternative_hat_color = get_alternate_color()
 }
 
 I wake up, as if from a long nap. 
@@ -15,9 +15,9 @@ I need to write the note.
 I write with...
 ~ temp x = RANDOM(1, 2)
 + {x == 1} a {writing_instrument}
-+ a {alternative_writing_instrument}
++ a {alternative_writing_instrument}.
 	~ mistakes += 1
-+ {x == 2} a {writing_instrument}
++ {x == 2} a {writing_instrument}.
 
 - Grabbing a piece of paper from my bag, I write the numbers:
 

@@ -1,3 +1,5 @@
+VAR endings = 10
+
 === killed_by_doctor_ending ===
 "You shouldn't have come here, {original_name}."
 
@@ -18,6 +20,9 @@ He raises a gun.
 * I hear metal flying through the air. 
 
 I don't even remember hitting the ground. 
+
+[ENDING 1/{endings}]
+
 -> END
 
 === burly_man_ending ===
@@ -33,6 +38,7 @@ He lifted me off the ground, and over the railing.
 "You're no longer useful." 
 I only hear one word before he let me go.
 "Goodbye."
+[ENDING 2/{endings}]
 -> END
 
 === stuck_in_body_ending === 
@@ -44,6 +50,8 @@ He tells me about clouds and labyrinth and drifters and war, but my head hurts l
 Only one thought remains:
 I am stuck in this body forever. 
 With no way out. 
+
+[ENDING 3/{endings}]
 -> END
 
 === reveal_map_ending ===
@@ -70,6 +78,7 @@ I am powerless.
 I can only hear one thing before I lose consciousness, and it makes my blood cold.
 
 "There is going to be war, and there is going to be blood."
+[ENDING 4/{endings}]
 
 -> END
 
@@ -83,6 +92,7 @@ My people won't be able to get the Map back. But I know at least my enemies will
 * I can open my eyes no longer. 
 
 - I slowly fall asleep, and never wake up. 
+[ENDING 5/{endings}]
 
 -> END
 
@@ -93,14 +103,14 @@ He is one of the elder Drifters.
 
 "We have lost the Map, but at least they will not have it too." I reply with what strength I have.
 
-He sighs. 
+He sighs again. 
 
 Time is too fragile to mess wih. 
 
 I will always remember that. 
 
 Consumed by darkness. I sink into a deep sleep. 
-
+[ENDING 6/{endings}]
 -> END
 
 === love_ending ===
@@ -115,6 +125,7 @@ I know what she wanted to say. It is dangerous, for a Drifter to remain in human
 But I have succeeded once. I have returned the Map to its rightful place. 
 
 I don't mind going on another adventure. 
+[ENDING 7/{endings}]
 -> END
 
 === happy_ending ===
@@ -127,15 +138,23 @@ The war will not end. But with the Map, we have a better chance.
 
 {fall_in_love: 
 	But somehow, in the later days, I always think of her. {gf_name}. 
+	[ENDING 8/{endings}]
+	-> END
+- else:
+    [ENDING 9/{endings}]
+    -> END
 }
-
--> END
 
 === happy_ending2 ===
 The war will not end. But with the Map, we have a better chance. 
 
 {fall_in_love: 
 	But somehow, in the later days, I always think of her. {gf_name}. 
+	[ENDING 8/{endings}]
+	-> END
+- else:
+    [ENDING 9/{endings}]
+    -> END
 }
 
 -> END
@@ -157,6 +176,8 @@ I couldn't speak. I couldn't move.
 He took out a gun and pointed it at me. 
 
 It's as if someone put out the lights. 
+
+[ENDING 10/{endings}]
 
 -> END
 
