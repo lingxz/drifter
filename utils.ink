@@ -23,7 +23,7 @@
 == function get_writing_instrument_alternative(current) ===
     ~ temp instrument = get_writing_instrument()
     {instrument == current:
-        get_writing_instrument_alternative
+        ~ return get_writing_instrument_alternative(current)
     - else:
         ~ return instrument
     }
@@ -45,7 +45,7 @@
 {wearing_hat:
     ~ temp color = get_color()
     {color == hat_color:
-        get_alternate_color()
+        ~ return get_alternate_color()
     - else:
         ~ return color
     }

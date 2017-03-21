@@ -21,6 +21,7 @@ VAR DEBUG = false
 	~ knows_gf = true
 	* [bedroom] ->schoolboy_room
 	* [school] -> school.start
+	* [library] -> library.entrance
 - else:
     * [Get up and look around. ] I get up and look around. 
     -> schoolboy_room
