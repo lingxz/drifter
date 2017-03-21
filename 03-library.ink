@@ -27,13 +27,14 @@ The library is quiet.
     }
 }
 
-+ [Go towards the shelf on the left.] I walk towards the right shelf. -> library.right_shelf
-+ [Go towards the shelf on the right.] I walk towards the left shelf. -> library.left_shelf
++ [Go towards the shelf on the right.] I walk towards the right shelf. -> library.right_shelf
++ [Go towards the shelf on the left.] I walk towards the left shelf. -> library.left_shelf
 + [Go towards the browsing trolley. ] I walk towards the browsing trolley. -> library.trolley
 + [Go towards the row of computers.] I walk towards the computers. -> library.computers
 
 = left_shelf
 There are a few books and CDs on the shelf. 
++ [Go back to the entrance] I walk back to the entrance. -> library.entrance
 + [Pick up a book.] I decide to pick up a book. But which one?
     ++ [{book2}]
         Looks like a nice book, but I don't have a library card. 
@@ -44,11 +45,13 @@ There are a few books and CDs on the shelf.
     ++ [{book4}]
         Maybe I'll read this some time.
         ~ read_books += 1
-    - + [Go back to the entrance] I walk back to the entrance. -> library.entrance
-+ [Go back to the entrance] I walk back to the entrance. -> library.entrance
-- [Go back to the entrance] I walk back to the entrance. -> library.entrance
+    - I walk back to the entrance. 
+    -> library.entrance
 
 = right_shelf
+There are a few books on the shelf.
++ [Go back to the entrance] I walk back to the entrance. 
+-> library.entrance
 + [Pick up a book.] I decide to pick up a book. But which one?
     ++ [{randombook3}]
         Looks like a nice book, but I don't have a library card. 
@@ -59,9 +62,8 @@ There are a few books and CDs on the shelf.
     ++ [{book5}]
         Maybe I'll read this some time.
         ~ read_books += 1
-    - + [Go back to the entrance] I walk back to the entrance. -> library.entrance
-There are a few books on the shelf. 
-+ [Go back to the entrance] I walk back to the entrance. -> library.entrance
+    - I walk back to the entrance. 
+    -> library.entrance
 
 = computers
 I sit down at one of the computers. 
