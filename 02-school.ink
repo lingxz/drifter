@@ -13,10 +13,11 @@ A girl is standing there, looking slightly nervous.
 
 {knows_gf:
     * I remember her. [] She's the girl in the photo. {name}'s girlfriend. 
+    -> talk_to_gf.start(knows_gf)
 - else:
-    Who is she? I don't know her. 
+    Who is she? I don't know her.
+    -> talk_to_gf.start(knows_gf)
 }
-- -> talk_to_gf.start(knows_gf)
 
 === talk_to_gf ===
 =start(knows)
