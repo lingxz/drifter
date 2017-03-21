@@ -19,6 +19,8 @@ VAR DEBUG = false
 {DEBUG:
 	IN DEBUG MODE!
 	~ knows_gf = true
+	~ read_books = 3
+	~ teacher_suspicious = true
 	* [bedroom] ->schoolboy_room
 	* [school] -> school.start
 	* [library] -> library.entrance

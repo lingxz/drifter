@@ -8,29 +8,34 @@ VAR watched = false
 The library is quiet. 
 
 {read_books > max_books and not met_teacher:
-    From the corner of my eye I see the invigilator from the test just now. He notices me. 
-    ~ met_teacher = true
-    {teacher_suspicious:
-        "What are you doing here?"
-        I freeze. 
-        What should I say?
-        * "Just looking around. I think a student is allowed to be in the library[."]," I shrug. 
-            He looks unconvinced. As I turn away from him, I can feel his eyes on me. ~ watched = true
-                -> library.entrance
-        * "Looking for something. Do you know what is {isbn}?" I show him the note. 
-            His expression changes. 
-            -> reveal_map_ending
-    - else:
-        He gives me a nod and turns away. 
-        Phew. I wouldn't want to be noticed by him. I don't feel good about him. 
-        -> library.entrance
-    }
+    -> library.meet_teacher
 }
 
 + [Go towards the shelf on the right.] I walk towards the right shelf. -> library.right_shelf
 + [Go towards the shelf on the left.] I walk towards the left shelf. -> library.left_shelf
 + [Go towards the browsing trolley. ] I walk towards the browsing trolley. -> library.trolley
 + [Go towards the row of computers.] I walk towards the computers. -> library.computers
+
+= meet_teacher
+From the corner of my eye I see the invigilator from the test just now. He notices me. 
+~ met_teacher = true
+{teacher_suspicious:
+    "What are you doing here?"
+    I freeze. 
+    What should I say?
+    * "Just looking around. I think a student is allowed to be in the library[."]," I shrug. 
+        He looks unconvinced. As I turn away from him, I can feel his eyes on me. 
+            ~ watched = true
+            -> library.entrance
+    * "Looking for something. Do you know what is {isbn}?" 
+        I show him the note. 
+        His expression changes. 
+        -> reveal_map_ending
+- else:
+    He gives me a nod and turns away. 
+    Phew. I wouldn't want to be noticed by him. I don't feel good about him. 
+    -> library.entrance
+}
 
 = left_shelf
 There are a few books and CDs on the shelf. 
