@@ -78,6 +78,8 @@ Maybe Google will tell me what the number means?
 
 = trolley
 There are a few books scattered on the trolley. 
++ [Go back to the entrance] I walk back to the entrance. 
+-> library.entrance
 + [Pick up a book.] I decide to pick up a book. But which one?
     ++ [{book1}]
         Hmm. Interesting book. 
@@ -91,9 +93,8 @@ There are a few books scattered on the trolley.
     ++ [{randombook2}]
         ~ read_books += 1
         Maybe I'll read this some time. 
-    - + [Go back to the entrance] I walk back to the entrance. -> library.entrance
-+ [Go back to the entrance] I walk back to the entrance. -> library.entrance
-- [Go back to the entrance] I walk back to the entrance. -> library.entrance
+    - I walk back to the entrance. 
+        -> library.entrance
 
 = correct_book
 As I pick up the book, a piece of parchment falls out. 
