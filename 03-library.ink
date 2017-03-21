@@ -12,7 +12,7 @@ The library is quiet.
     ~ met_teacher = true
     {teacher_suspicious:
         "What are you doing here?"
-        I froze. 
+        I freeze. 
         What should I say?
         * "Just looking around. I think a student is allowed to be in the library[."]," I shrug. 
             He looks unconvinced. As I turn away from him, I can feel his eyes on me. ~ watched = true

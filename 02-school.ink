@@ -35,13 +35,13 @@ A girl is standing there, looking slightly nervous.
     * "Who are you?" []I ask. The words come out of my mouth harsher than I expected. 
         She narrows her eyes. "You're still angry?" she seems to be considering her choices, then settled on one, "Let's talk when you're no longer so angsty and snappy then."
         With that, she walks away. 
-        ** I shrugged and walked on.
+        ** I shrug and walk on.
         There is a test, I gather from the people around me. 
         -> test
     * [Ignore her] I ignore her and walk on. 
         From the corner of my eye, I see her freeze for a moment, then she shrugs, and walks off. 
         Did I make a mistake?
-        I wonder for a moment, then shrugged and walked on. 
+        I wonder for a moment, then shrug and walk on. 
         There is a test, I gather from the people around me. 
         -> test
 }
@@ -155,7 +155,7 @@ He gets angry, and he tries to force me.
 }
 
 = test_end
-As I was walking aimlessly, someone stuck a piece of paper in my pocket. I turn around, but the person is gone. 
+As I walk aimlessly, someone stuck a piece of paper in my pocket. I turn around, but the person is gone. 
 
 It says...
 GO TO THE LIBRARY, LOOK FOR {isbn}.
