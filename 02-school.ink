@@ -83,7 +83,7 @@ There are 5 questions.
 What should I fill in as the answers? 
 ~ temp x = RANDOM(1, 5)
 * {x == 1}[Answers: {answer1}, {answer2}, {answer3}, {answer4}, {answer5}]
-    -> correct_answer
+    -> test.correct_answer
 * [Answers: {get_random_answer()}, {get_random_answer()}, {get_random_answer()}, {get_random_answer()}, {get_random_answer()}]
     -> test.wrong_answer
 * {x == 2}[Answers: {answer1}, {answer2}, {answer3}, {answer4}, {answer5}]
