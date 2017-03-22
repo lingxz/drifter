@@ -15,7 +15,7 @@ This is not my body.
 // ~ temp state = get_random_index()
 // ~ temp name = names(state)
 ~ temp name = "Connor"
-VAR DEBUG = true
+VAR DEBUG = false
 {DEBUG:
 	IN DEBUG MODE!
 	~ knows_gf = true
