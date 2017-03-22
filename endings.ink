@@ -55,7 +55,7 @@ With no way out.
 -> END
 
 === reveal_map_ending ===
-He goes towards the computers, logs in with his password, and gooles the number. Then, he strides towards the trolley, picks up a book, and flips through it. 
+He goes towards the computers, logs in with his password, and googles the number. Then, he strides towards the trolley, picks up a book, and flips through it. 
 A piece of parchment falls out of the book. 
 He picks it up, then he laughs.
 In it I hear some relief, and much more triumph.  
