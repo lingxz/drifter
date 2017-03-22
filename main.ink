@@ -15,15 +15,18 @@ This is not my body.
 // ~ temp state = get_random_index()
 // ~ temp name = names(state)
 ~ temp name = "Connor"
-VAR DEBUG = false
+VAR DEBUG = true
 {DEBUG:
 	IN DEBUG MODE!
 	~ knows_gf = true
 	~ read_books = 3
 	~ teacher_suspicious = true
+	~ writing_instrument = "red pen"
+	~ wearing_hat = false
 	* [bedroom] ->schoolboy_room
 	* [school] -> school.start
 	* [library] -> library.entrance
+	* [back in time] -> back_in_time.start
 - else:
     * [Get up and look around. ] I get up and look around. 
     -> schoolboy_room

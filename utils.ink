@@ -52,7 +52,7 @@
 }
 
 === function set_universe ===
-~ temp x = RANDOM(1, 5)
+~ temp x = RANDOM(1, 4)
 {x == 1:
     ~ return "original"
 - else:
